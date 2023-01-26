@@ -7,7 +7,7 @@
         "dist"
     ],
     "publishConfig": {
-        "registry": "https://npm.pkg.github.com/tailorub-mad"
+        "registry": "https://npm.pkg.github.com/tailorhub-mad"
     },
     "scripts": {
         "build": "rm -rf dist/ && rollup -c",
