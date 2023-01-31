@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material';
+import { Variant as TypographyVariant } from '@mui/material/styles/createTypography';
 import { Box } from '@mui/system';
 import { FC } from 'react';
 import { X } from '../icons/x';
@@ -6,9 +7,10 @@ import { X } from '../icons/x';
 type TModalTitleAndXProps = {
   text: string;
   onClick: () => void;
+  textVariant?: TypographyVariant;
 };
 
-export const ModalTitleAndX: FC<TModalTitleAndXProps> = ({ text, onClick }) => {
+export const ModalTitleAndX: FC<TModalTitleAndXProps> = ({ text, onClick, textVariant }) => {
   return (
     <Box
       sx={{
@@ -17,7 +19,7 @@ export const ModalTitleAndX: FC<TModalTitleAndXProps> = ({ text, onClick }) => {
         alignItems: 'center'
       }}
     >
-      <Typography variant="h6" component="h2">
+      <Typography variant={textVariant || 'h6'} component="h2">
         {text}
       </Typography>
       <X cursor="pointer" onClick={onClick} />
