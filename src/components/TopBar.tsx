@@ -1,6 +1,7 @@
 import { Box, Breadcrumbs, Stack, Typography } from '@mui/material';
 import { FC, PropsWithChildren } from 'react';
 import { ChevronRight } from '../icons/chevron-right';
+import { Theme } from './theme';
 
 type TTopBarProps = {
   paths: string[];
@@ -41,19 +42,21 @@ export const TopBar: FC<PropsWithChildren<TTopBarProps>> = ({ children, paths })
   };
 
   return (
-    <Stack
-      direction={'row'}
-      justifyContent={'space-between'}
-      alignItems={'center'}
-      sx={{
-        padding: '12px 24px',
-        width: '100%',
-        border: '2px solid #F3F4F6',
-        minHeight: '72px'
-      }}
-    >
-      <Box visibility={isInvalidPath() ? 'hidden' : 'visible'}>{displayBreadCrumbs(paths)}</Box>
-      <Box>{children}</Box>
-    </Stack>
+    <Theme>
+      <Stack
+        direction={'row'}
+        justifyContent={'space-between'}
+        alignItems={'center'}
+        sx={{
+          padding: '12px 24px',
+          width: '100%',
+          border: '2px solid #F3F4F6',
+          minHeight: '72px'
+        }}
+      >
+        <Box visibility={isInvalidPath() ? 'hidden' : 'visible'}>{displayBreadCrumbs(paths)}</Box>
+        <Box>{children}</Box>
+      </Stack>
+    </Theme>
   );
 };
