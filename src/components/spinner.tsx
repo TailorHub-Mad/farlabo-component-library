@@ -1,7 +1,7 @@
 import { Box, CircularProgress } from '@mui/material';
 import { FC } from 'react';
 
-const Spinner: FC = () => {
+export const Spinner: FC = () => {
   return (
     <Box
       sx={{
@@ -14,5 +14,3 @@ const Spinner: FC = () => {
     </Box>
   );
 };
-
-export default Spinner;
