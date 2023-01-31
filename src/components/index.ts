@@ -4,3 +4,4 @@ export * from './progress-pointer';
 export * from './progress-bar';
 export * from './modal-title-and-x';
 export * from './spinner';
+export * from './TopBar';
