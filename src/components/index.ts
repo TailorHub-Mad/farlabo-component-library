@@ -5,3 +5,7 @@ export * from './ProgressBar';
 export * from './ModalTitleAndX';
 export * from './Spinner';
 export * from './TopBar';
+export * from './ModalContentContainer';
+export * from './SmallCardIcon';
+export * from './ConfirmationModal';
+export * from './ExitButton';
