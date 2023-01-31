@@ -9,7 +9,7 @@ type TConfirmationModalProps = {
   buttonProps: TButtonProps;
   close: () => void;
   resetFormState: () => void;
-  goBack: () => void;
+  goBack?: () => void;
 };
 
 export const ConfirmationModal: FC<TConfirmationModalProps> = (props) => {
@@ -34,7 +34,7 @@ export const ConfirmationModal: FC<TConfirmationModalProps> = (props) => {
               sx={{ mr: 2 }}
               onClick={() => {
                 resetFormState();
-                goBack();
+                goBack && goBack();
               }}
             >
               {button1}
