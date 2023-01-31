@@ -1,7 +1,7 @@
 import { Box, Breadcrumbs, Stack, Typography } from '@mui/material';
 import { FC, PropsWithChildren } from 'react';
 import { ChevronRight } from '../icons/chevron-right';
-import { Theme } from './theme';
+import { Theme } from './Theme';
 
 type TTopBarProps = {
   paths: string[];

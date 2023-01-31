@@ -2,8 +2,8 @@ import { Avatar, Box, Card, Stack, Typography } from '@mui/material';
 import { FC } from 'react';
 import { ChevronRight } from '../icons/chevron-right';
 import { Clock } from '../icons/clock';
-import { SeverityPill } from './severity-pill';
-import { Theme } from './theme';
+import { SeverityPill } from './SeverityPill';
+import { Theme } from './Theme';
 
 export const MarketingCard: FC = () => {
   return (

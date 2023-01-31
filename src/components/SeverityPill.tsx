@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Box, Theme as muiTheme } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import type { SxProps } from '@mui/system';
-import { Theme } from './theme';
+import { Theme } from './Theme';
 
 type SeverityPillColor = 'primary' | 'secondary' | 'error' | 'info' | 'warning' | 'success';
 

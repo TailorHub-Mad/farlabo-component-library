@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from '@mui/material';
 import { FC } from 'react';
-import { Theme } from './theme';
+import { Theme } from './Theme';
 
 interface ProgressPointerProps {
   number: number;

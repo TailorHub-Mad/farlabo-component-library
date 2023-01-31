@@ -1,6 +1,6 @@
 import { Box, CircularProgress } from '@mui/material';
 import { FC } from 'react';
-import { Theme } from './theme';
+import { Theme } from './Theme';
 
 export const Spinner: FC = () => {
   return (
