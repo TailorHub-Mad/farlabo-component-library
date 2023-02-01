@@ -1,5 +1,5 @@
 import { Box, LinearProgress } from '@mui/material';
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { ProgressPointer } from './components/ProgressPointer';
 import { Theme } from '../Theme';
 
@@ -11,10 +11,9 @@ interface ProgressStep {
 interface ProgressBarProps {
   steps: ProgressStep[];
   currentStep: number;
-  setIsCompleted: (isCompleted: boolean) => void;
 }
 
-export const ProgressBar: FC<ProgressBarProps> = ({ steps, currentStep, setIsCompleted }) => {
+export const ProgressBar: FC<ProgressBarProps> = ({ steps, currentStep }) => {
   const calculateFillBar = () => {
     const totalSteps = steps.length;
     const stepDistance = 100 / (totalSteps + 1);
@@ -23,11 +22,6 @@ export const ProgressBar: FC<ProgressBarProps> = ({ steps, currentStep, setIsCom
     if (currentStep === 0) return initialPlacement;
     else return initialPlacement + stepDistance * currentStep;
   };
-
-  useEffect(() => {
-    if (currentStep === steps.length - 1) setIsCompleted(true);
-    else setIsCompleted(false);
-  }, [currentStep]);
 
   return (
     <Theme>
