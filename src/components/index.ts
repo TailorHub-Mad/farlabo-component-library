@@ -8,3 +8,4 @@ export * from './ModalContentContainer';
 export * from './SmallCardIcon';
 export * from './ConfirmationModal';
 export * from './ExitButton';
+export * from './FooterForm';
