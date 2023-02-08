@@ -9,3 +9,4 @@ export * from './SmallCardIcon';
 export * from './ConfirmationModal';
 export * from './ExitButton';
 export * from './FooterForm';
+export * from './BinaryRadioButtons/BinaryRadioButtons';
