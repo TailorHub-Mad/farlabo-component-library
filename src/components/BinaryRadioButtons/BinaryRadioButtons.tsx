@@ -12,7 +12,7 @@ interface IBinaryRadioButtonsProps {
   };
 }
 
-const BinaryRadioButtons: FC<IBinaryRadioButtonsProps> = ({ handleRadioButtons, data }) => {
+export const BinaryRadioButtons: FC<IBinaryRadioButtonsProps> = ({ handleRadioButtons, data }) => {
   return (
     <Theme>
       <RadioGroup onChange={handleRadioButtons} row>
@@ -22,5 +22,3 @@ const BinaryRadioButtons: FC<IBinaryRadioButtonsProps> = ({ handleRadioButtons, 
     </Theme>
   );
 };
-
-export default BinaryRadioButtons;
