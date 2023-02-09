@@ -5,7 +5,7 @@ import { Theme } from '../../Theme';
 interface IRadioProps {
   label: string;
   value: string;
-  selected: string;
+  selected?: string;
 }
 
 export const Radio: FC<IRadioProps> = ({ label, value, selected }) => {

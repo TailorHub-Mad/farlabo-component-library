@@ -6,7 +6,7 @@ import { Radio } from './components/Radio';
 
 interface IBinaryRadioButtonsProps {
   handleRadioButtons: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  selected: string;
+  selected?: string;
   data: {
     first: ILabelValue;
     second: ILabelValue;
