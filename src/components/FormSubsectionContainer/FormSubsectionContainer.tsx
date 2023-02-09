@@ -19,7 +19,7 @@ export const FormSubSectionContainer: FC<PropsWithChildren<FormSubSectionContain
     <Theme>
       <Stack direction={'row'}>
         <CircleWithNumber number={number} />
-        <Box sx={{ ml: 3 }}>
+        <Box sx={{ ml: 2, minWidth: '510px' }}>
           <Typography variant="overline">{title}</Typography>
           {subtitle && (
             <Typography variant="subtitle2" color={'#6B7280'}>
