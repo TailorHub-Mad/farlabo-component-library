@@ -11,3 +11,4 @@ export * from './ExitButton';
 export * from './FooterForm';
 export * from './BinaryRadioButtons/BinaryRadioButtons';
 export * from './FormSubsectionContainer/FormSubsectionContainer';
+export * from './SelectedItems';
