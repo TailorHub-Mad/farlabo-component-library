@@ -1,14 +1,14 @@
 import { RadioGroup } from '@mui/material';
 import { FC } from 'react';
-import { ILabelValue } from '../../interfaces/global';
+import { ILabelValueChecked } from '../../interfaces/global';
 import { Theme } from '../Theme';
 import { Radio } from './components/Radio';
 
 interface IBinaryRadioButtonsProps {
   handleRadioButtons: (event: React.ChangeEvent<HTMLInputElement>) => void;
   data: {
-    first: ILabelValue;
-    second: ILabelValue;
+    first: ILabelValueChecked;
+    second: ILabelValueChecked;
   };
 }
 
@@ -16,8 +16,8 @@ export const BinaryRadioButtons: FC<IBinaryRadioButtonsProps> = ({ handleRadioBu
   return (
     <Theme>
       <RadioGroup onChange={handleRadioButtons} row>
-        <Radio value={data.first.value} label={data.first.label} />
-        <Radio value={data.second.value} label={data.second.label} />
+        <Radio value={data.first.value} label={data.first.label} checked={data.first.checked} />
+        <Radio value={data.second.value} label={data.second.label} checked={data.second.checked} />
       </RadioGroup>
     </Theme>
   );
