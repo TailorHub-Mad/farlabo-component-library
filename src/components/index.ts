@@ -10,3 +10,4 @@ export * from './ConfirmationModal';
 export * from './ExitButton';
 export * from './FooterForm';
 export * from './BinaryRadioButtons/BinaryRadioButtons';
+export * from './FormSubsectionContainer/FormSubsectionContainer';
