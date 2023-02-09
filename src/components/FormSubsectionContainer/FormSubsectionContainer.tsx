@@ -5,13 +5,13 @@ import { CircleWithNumber } from './components/CircleWithNumber';
 
 interface FormSubSectionContainerProps extends ContainerProps {
   title: string;
-  subTitle?: string;
+  subtitle?: string;
   number: number;
 }
 
 export const FormSubSectionContainer: FC<PropsWithChildren<FormSubSectionContainerProps>> = ({
   title,
-  subTitle,
+  subtitle,
   number,
   children
 }) => {
@@ -21,9 +21,11 @@ export const FormSubSectionContainer: FC<PropsWithChildren<FormSubSectionContain
         <CircleWithNumber number={number} />
         <Box sx={{ ml: 3 }}>
           <Typography variant="overline">{title}</Typography>
-          <Typography variant="subtitle2" color={'#6B7280'}>
-            {subTitle}
-          </Typography>
+          {subtitle && (
+            <Typography variant="subtitle2" color={'#6B7280'}>
+              {subtitle}
+            </Typography>
+          )}
           {children}
         </Box>
       </Stack>
