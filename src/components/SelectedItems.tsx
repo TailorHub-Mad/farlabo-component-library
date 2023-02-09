@@ -27,40 +27,40 @@ export const SelectedItems: FC<SelectedItemsProps> = ({
     else return `${selectedArr.length} ${texts.plural}`;
   };
 
-  return (
+  return selectedArr?.length ? (
     <Theme>
-      {selectedArr?.length ? (
-        <Grid item md={12} xs={6} sx={{ mt }}>
-          <Typography variant="caption" color={'#3741517A'}>
-            {returnTitle()}
-          </Typography>
-          <Stack mt={1}>
-            {selectedArr.map((item: string, idx: number) => (
-              <Stack
-                direction={'row'}
-                alignItems="center"
-                justifyContent={'space-between'}
-                key={item}
+      <Grid item md={12} xs={6} sx={{ mt }}>
+        <Typography variant="caption" color={'#3741517A'}>
+          {returnTitle()}
+        </Typography>
+        <Stack mt={1}>
+          {selectedArr.map((item: string, idx: number) => (
+            <Stack
+              direction={'row'}
+              alignItems="center"
+              justifyContent={'space-between'}
+              key={item}
+            >
+              <Typography variant="body1">{item}</Typography>
+              <Button
+                variant="text"
+                endIcon={<Close />}
+                onClick={() => handleRemoveItem(item, idx)}
               >
-                <Typography variant="body1">{item}</Typography>
-                <Button
-                  variant="text"
-                  endIcon={<Close />}
-                  onClick={() => handleRemoveItem(item, idx)}
-                >
-                  Eliminar
-                </Button>
-              </Stack>
-            ))}
-          </Stack>
-        </Grid>
-      ) : (
-        <Grid item>
-          <Typography variant="caption" color={'#3741517A'}>
-            {texts.none}
-          </Typography>
-        </Grid>
-      )}
+                Eliminar
+              </Button>
+            </Stack>
+          ))}
+        </Stack>
+      </Grid>
+    </Theme>
+  ) : (
+    <Theme>
+      <Grid item>
+        <Typography variant="caption" color={'#3741517A'}>
+          {texts.none}
+        </Typography>
+      </Grid>
     </Theme>
   );
 };
