@@ -29,7 +29,7 @@ export const SelectedItems: FC<SelectedItemsProps> = ({
 
   return selectedArr?.length ? (
     <Theme>
-      <Grid item md={12} xs={6} sx={{ mt }}>
+      <Grid item md={12} xs={6} sx={{ mt, width: '100%' }}>
         <Typography variant="caption" color={'#3741517A'}>
           {returnTitle()}
         </Typography>
