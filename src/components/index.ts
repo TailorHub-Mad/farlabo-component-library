@@ -13,3 +13,4 @@ export * from './BinaryRadioButtons/BinaryRadioButtons';
 export * from './FormSubsectionContainer/FormSubsectionContainer';
 export * from './SelectedItems';
 export * from './InformativeMessage';
+export * from './TableWrapper';
