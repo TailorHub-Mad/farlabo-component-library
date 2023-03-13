@@ -1,5 +1,5 @@
 import { Box, Button, Stack } from '@mui/material';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Theme } from './Theme';
 
 interface FooterFormProps {
@@ -8,6 +8,7 @@ interface FooterFormProps {
   maxSteps: number;
   text: string;
   isFinished: boolean;
+  isCreating?: boolean;
 }
 
 export const FooterForm: FC<FooterFormProps> = ({
@@ -15,16 +16,9 @@ export const FooterForm: FC<FooterFormProps> = ({
   step,
   maxSteps,
   text,
-  isFinished
+  isFinished,
+  isCreating = false
 }) => {
-  const [isCreating, setIsCreating] = useState<boolean>(false);
-
-  const handleSubmitBtn = async (reason: string) => {
-    setIsCreating(true);
-    await handleSubmit(reason);
-    setIsCreating(false);
-  };
-
   const submitAndScrollTop = (reason: string) => {
     handleSubmit(reason);
     setTimeout(function () {
@@ -69,7 +63,7 @@ export const FooterForm: FC<FooterFormProps> = ({
               </Button>
             ) : (
               <Button
-                onClick={() => handleSubmitBtn('submit')}
+                onClick={async () => await handleSubmit('submit')}
                 variant="contained"
                 disabled={!isFinished || isCreating}
               >
