@@ -8,7 +8,9 @@ export const Spinner: FC = () => {
       <Box
         sx={{
           display: 'flex',
-          width: '100%',
+          height: '100vh',
+          flexDirection: 'column',
+          alignItems: 'center',
           justifyContent: 'center'
         }}
       >
