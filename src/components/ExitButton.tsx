@@ -8,9 +8,10 @@ import { Theme } from './Theme';
 interface IExitButtonProps {
   reset: () => void;
   goBack: () => void;
+  recentChanges: boolean;
 }
 
-export const ExitButton: FC<IExitButtonProps> = ({ reset, goBack }) => {
+export const ExitButton: FC<IExitButtonProps> = ({ reset, goBack, recentChanges }) => {
   const buttonProps = {
     title: 'Estás a punto de salir sin guardar',
     subtitle: '',
@@ -32,13 +33,19 @@ export const ExitButton: FC<IExitButtonProps> = ({ reset, goBack }) => {
         <SmallCardIcon>
           <X
             onClick={() => {
-              setIsOpen(true);
+              if (!recentChanges) goBack();
+              else setIsOpen(true);
             }}
           />
         </SmallCardIcon>
       </Box>
       <Modal open={isOpen}>
-        <ConfirmationModal buttonProps={buttonProps} close={() => setIsOpen(false)} resetFormState={reset} goBack={goBack} />
+        <ConfirmationModal
+          buttonProps={buttonProps}
+          close={() => setIsOpen(false)}
+          resetFormState={reset}
+          goBack={goBack}
+        />
       </Modal>
     </Theme>
   );
