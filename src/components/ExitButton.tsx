@@ -29,14 +29,13 @@ export const ExitButton: FC<IExitButtonProps> = ({ reset, goBack, recentChanges 
           left: '24px',
           top: '-6px'
         }}
+        onClick={() => {
+          if (!recentChanges) goBack();
+          else setIsOpen(true);
+        }}
       >
         <SmallCardIcon>
-          <X
-            onClick={() => {
-              if (!recentChanges) goBack();
-              else setIsOpen(true);
-            }}
-          />
+          <X />
         </SmallCardIcon>
       </Box>
       <Modal open={isOpen}>
